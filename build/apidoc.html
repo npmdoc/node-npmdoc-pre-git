@@ -1,0 +1,344 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/bahmutov/pre-git"
+
+    >pre-git (v3.14.0)</a>
+</h1>
+<h4>Automatically install pre-commit / pre-git hooks for your npm modules.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pre-git">module pre-git</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pre-git.customMsgPattern">
+            function <span class="apidocSignatureSpan">pre-git.</span>customMsgPattern
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pre-git.customMsgPatternError">
+            function <span class="apidocSignatureSpan">pre-git.</span>customMsgPatternError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pre-git.getProjRoot">
+            function <span class="apidocSignatureSpan">pre-git.</span>getProjRoot
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pre-git.getTasks">
+            function <span class="apidocSignatureSpan">pre-git.</span>getTasks
+            <span class="apidocSignatureSpan">(label)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pre-git.hasUntrackedFiles">
+            function <span class="apidocSignatureSpan">pre-git.</span>hasUntrackedFiles
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pre-git.printError">
+            function <span class="apidocSignatureSpan">pre-git.</span>printError
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pre-git.run">
+            function <span class="apidocSignatureSpan">pre-git.</span>run
+            <span class="apidocSignatureSpan">(hookLabel)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pre-git.wizard">
+            function <span class="apidocSignatureSpan">pre-git.</span>wizard
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pre-git" id="apidoc.module.pre-git">module pre-git</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pre-git.customMsgPattern" id="apidoc.element.pre-git.customMsgPattern">
+        function <span class="apidocSignatureSpan">pre-git.</span>customMsgPattern
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function customCommitMsgPattern() {
+  return getConfigProperty(&#x27;msg-pattern&#x27;);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pre-git.customMsgPatternError" id="apidoc.element.pre-git.customMsgPatternError">
+        function <span class="apidocSignatureSpan">pre-git.</span>customMsgPatternError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function customCommitMsgPatternError() {
+  return getConfigProperty(&#x27;msg-pattern-error&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pre-git.getProjRoot" id="apidoc.element.pre-git.getProjRoot">
+        function <span class="apidocSignatureSpan">pre-git.</span>getProjRoot
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getProjRoot() {
+  return new Promise(function (resolve, reject) {
+    child.exec(&#x27;git rev-parse --show-toplevel&#x27;, function onRoot(err, output) {
+      if (err) {
+        console.error(&#x27;&#x27;);
+        console.error(label, &#x27;Failed to find git root. Cannot run the tests.&#x27;);
+        console.error(err);
+        console.error(&#x27;&#x27;);
+        return reject(new Error(&#x27;Failed to find git in the project root&#x27;));
+      }
+
+      var gitRoot = output.trim();
+      var projRoot = path.join(gitRoot, gitPrefix);
+      var pkg;
+      try {
+        var file = findPackage();
+        pkg = require(file);
+        projRoot = path.dirname(file);
+      }
+      catch (e) {
+        return resolve(gitRoot);
+      }
+
+      if (pkg[&#x27;pre-git-cwd&#x27;]) {
+        projRoot = path.resolve(path.join(gitRoot, pkg[&#x27;pre-git-cwd&#x27;]));
+      }
+      return resolve(projRoot);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pre-git.getTasks" id="apidoc.element.pre-git.getTasks">
+        function <span class="apidocSignatureSpan">pre-git.</span>getTasks
+        <span class="apidocSignatureSpan">(label)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getTasks(label) {
+  var pkg = getPackage();
+  la(check.object(pkg), &#x27;missing package&#x27;, pkg);
+
+  const config = getConfig();
+  if (!config) {
+    return;
+  }
+
+  if (hasEnabledOption(config) &#x26;&#x26; !config.enabled) {
+    return;
+  }
+
+  var run = pkg[label] ||
+    config &#x26;&#x26;
+    config[label];
+
+  if (check.string(run)) {
+    run = [run];
+  }
+  log(&#x27;tasks for label &#x22;%s&#x22; are&#x27;, label, run);
+  return run;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pre-git.hasUntrackedFiles" id="apidoc.element.pre-git.hasUntrackedFiles">
+        function <span class="apidocSignatureSpan">pre-git.</span>hasUntrackedFiles
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function hasUntrackedFiles() {
+  const config = getConfig();
+  if(config[&#x27;allow-untracked-files&#x27;]) {
+    return Promise.resolve(false);
+  }
+  return ggit.untrackedFiles()
+    .then(function (names) {
+      return check.unempty(names);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pre-git.printError" id="apidoc.element.pre-git.printError">
+        function <span class="apidocSignatureSpan">pre-git.</span>printError
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function printError(x) {
+  console.error(errorMessage(x) || &#x27;Unknown error&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pre-git.run" id="apidoc.element.pre-git.run">
+        function <span class="apidocSignatureSpan">pre-git.</span>run
+        <span class="apidocSignatureSpan">(hookLabel)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function run(hookLabel) {
+  log(&#x27;running&#x27;, hookLabel);
+  checkInputs(hookLabel);
+
+  label = hookLabel;
+
+  // TODO should the failure action be outside?
+  return getProjRoot()
+    .tap((root) =&#x3e; log(&#x27;running&#x27;, hookLabel, &#x27;in&#x27;, root))
+    .then((root) =&#x3e; runAtRoot(root, hookLabel))
+    .catch((err) =&#x3e; failure(hookLabel, err));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pre-git.wizard" id="apidoc.element.pre-git.wizard">
+        function <span class="apidocSignatureSpan">pre-git.</span>wizard
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function pickWizard() {
+  const wizardName = getWizardName();
+  if (!wizardName) {
+    log(&#x27;no wizard name set&#x27;);
+    return;
+  }
+  log(&#x27;using commit message wizard %s&#x27;, wizardName);
+
+  const wiz = isBuiltInWizardName(wizardName) ?
+    loadWizard(wizardName) : require(wizardName);
+  la(check.fn(wiz.prompter), &#x27;missing wizard prompter&#x27;, wizardName, wiz);
+  return wiz;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
